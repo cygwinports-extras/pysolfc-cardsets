@@ -1,0 +1,23 @@
+NAME="pysolfc-cardsets"
+VERSION=2.0
+RELEASE=1
+CATEGORY="Games"
+SUMMARY="Cardsets for PySolFC and Aisleriot"
+DESCRIPTION="PySolFC is a collection of more than 1000 solitaire card games.
+Its features include modern look and feel, multiple cardsets and tableau
+backgrounds, sound, unlimited undo, player statistics, a hint system, demo
+games, a solitaire wizard, support for user written plug-ins, an integrated
+HTML help browser, and lots of documentation."
+HOMEPAGE="http://pysolfc.sourceforge.net/"
+SRC_URI="mirror://sourceforge/pysolfc/PySolFC-Cardsets-${VERSION}.tar.bz2"
+SRC_DIR="PySolFC-Cardsets-${VERSION}"
+
+ARCH=noarch
+
+src_compile() { :; }
+
+src_install() {
+	cd ${S}
+	dodir /usr/share/PySolFC
+	cp -a cardset-* ${D}/usr/share/PySolFC/
+}
